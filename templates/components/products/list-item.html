@@ -1,5 +1,8 @@
 <article class="listItem">
     <figure class="listItem-figure">
+        {{#if products.featured}}
+        <img class="inStoreBanner" src="/product_images/uploaded_images/on-display-banner.png" alt="on display instore">
+        {{/if}}
         <img class="listItem-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
         {{#unless hide_product_quick_view}}
             {{#if theme_settings.show_product_quick_view}}

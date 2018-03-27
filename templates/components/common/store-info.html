@@ -1,0 +1,34 @@
+<div class="container text-center below-inspired">
+    <a href="{{ theme_settings.home-large-button-link }}"><span class="button expand hollow">{{ theme_settings.home-large-button }}</span></a>
+    <div class="row store-hour-section">
+        <div class="column small-12 large-6 store-hours">
+            <h3>store hours</h3>
+            <div class="row">
+                <div class="column small-12 medium-6">
+                     <p class="days-text">monday</p>
+            <p><span>{{ theme_settings.store-hours-monday }}</span></p>
+            <p class="days-text">tuesday</p>
+            <p><span>{{ theme_settings.store-hours-tuesday }}</span></p>
+            <p class="days-text">wednesday</p>
+            <p><span>{{ theme_settings.store-hours-wednesday }}</span></p>
+                </div>
+                <div class="column small-12 medium-6">
+                    <p class="days-text">thursday</p>
+            <p><span>{{ theme_settings.store-hours-thursday }}</span></p>
+            <p class="days-text">friday</p>
+            <p><span>{{ theme_settings.store-hours-friday }}</span></p>
+            <p class="days-text">saturday</p>
+            <p><span>{{ theme_settings.store-hours-saturday }}</span></p>
+                </div>
+                <div class="column small-12">
+                    <p class="days-text">sunday</p>
+            <p><span>{{ theme_settings.store-hours-sunday }}</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="column small-12 large-6 no-pad">
+            <a href="{{ theme_settings.google-map-link }}" target="_blank"><img src="https://maps.google.com/maps/api/staticmap?center={{ theme_settings.google-map-creds }}&zoom={{ theme_settings.google-map-zoom }}&size=512x330&maptype=roadmap&markers=icon:https://cdn7.bigcommerce.com/s-t0qyujsmht/product_images/uploaded_images/southernlogo.png|{{ theme_settings.google-map-latitude }},{{ theme_settings.google-map-longitude }}{{#if theme_settings.google-map-latitude2}}&markers=icon:https://cdn7.bigcommerce.com/s-t0qyujsmht/product_images/uploaded_images/southernlogo.png||{{ theme_settings.google-map-latitude2 }},{{ theme_settings.google-map-longitude2 }}{{/if}}{{#if theme_settings.google-map-latitude3}}&markers=icon:https://cdn7.bigcommerce.com/s-t0qyujsmht/product_images/uploaded_images/southernlogo.png||{{ theme_settings.google-map-latitude3 }},{{ theme_settings.google-map-longitude3 }}{{/if}}" alt="">
+</a>
+        </div>
+    </div>
+</div>

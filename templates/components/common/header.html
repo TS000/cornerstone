@@ -1,28 +1,69 @@
-{{#if banners.top}}
+<div class="no-print">
 <div class="banners" data-banner-location="top">
     <div class="banner">
-        {{{limit banners.top 1}}}
+        <div class="row">
+             <div class="column"> 
+                 {{{limit banners.top 1}}} 
+             </div> 
+            <div class="column medium-12">
+                {{> components/common/navigation}}
+            </div>
+        </div>
     </div>
 </div>
-{{/if}}
+
 <header class="header" role="banner">
     <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
         <span class="mobileMenu-toggleIcon">Toggle menu</span>
     </a>
-    {{> components/common/navigation}}
-
-    {{#if page_type '===' 'default'}}
-        <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
+    <div class="row">
+    <div class="column large-3">
+    <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
             {{> components/common/store-logo}}
         </h1>
-    {{else}}
-        <div class="header-logo header-logo--{{theme_settings.logo-position}}">
-            {{> components/common/store-logo}}
         </div>
-    {{/if}}
-    {{{region name="header_bottom"}}}
-    <div class="navPages-container" id="menu" data-menu>
+    <div class="column large-9 navPages-container" id="menu" data-menu>
         {{> components/common/navigation-menu}}
+        <ul class="category-nav">
+            {{#if theme_settings.nav-option1}}
+        <li><a href="{{ theme_settings.nav-option1-link }}">{{ theme_settings.nav-option1-text }}</a>
+        </li>
+        {{/if}}
+        {{#if theme_settings.nav-option2-text}}
+        <li><a href="{{ theme_settings.nav-option2-link }}">{{ theme_settings.nav-option2-text }}</a>
+        </li>
+        {{/if}}
+        {{#if theme_settings.nav-option3-text}}
+        <li><a href="{{ theme_settings.nav-option3-link }}">{{ theme_settings.nav-option3-text }}</a>
+        </li>
+        {{/if}}
+        {{#if theme_settings.nav-option4-text}}
+        <li><a href="{{ theme_settings.nav-option4-link }}">{{ theme_settings.nav-option4-text }}</a>
+        </li>
+        {{/if}}
+        {{#if theme_settings.nav-option5-text}}
+        <li><a href="{{ theme_settings.nav-option5-link }}">{{ theme_settings.nav-option5-text }}</a>
+        </li>
+        {{/if}}
+        {{#if theme_settings.nav-option6-text}}
+        <li><a href="{{ theme_settings.nav-option6-link }}">{{ theme_settings.nav-option6-text }}</a>
+        </li>
+        {{/if}}
+        {{#if theme_settings.nav-option7-text}}
+        <li><a href="{{ theme_settings.nav-option7-link }}">{{ theme_settings.nav-option7-text }}</a>
+        </li>
+        {{/if}}
+        {{#if theme_settings.nav-option8-text}}
+        <li><a href="{{ theme_settings.nav-option8-link }}">{{ theme_settings.nav-option8-text }}</a>
+        </li>
+        {{/if}}
+        </ul>
+    </div>
     </div>
 
+  <!--   <div class="header-logo header-logo- -{{theme_settings.logo-position}}">
+        {{> components/common/store-logo}}
+    </div> -->
+
 </header>
+</div>

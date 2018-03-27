@@ -72,6 +72,9 @@
                     <div class="productView-brand">
                         {{brand.name}}
                     </div>
+                    <div class="productView-brand">
+                        {{product.custom_fields.[2].name}}
+                    </div>
 
                     <div class="productView-price">
                         {{#or ../customer (if ../theme_settings.restrict_to_login '!==' true)}}

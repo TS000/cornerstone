@@ -1,0 +1,1 @@
+{"components/common/categoryBanner":"{{#if category.image}}\n<div class=\"category-imageContain\">\n    <img src=\"{{getImage category.image 'gallery'}}\">\n</div>\n{{/if}}\n"}

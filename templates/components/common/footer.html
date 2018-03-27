@@ -1,3 +1,12 @@
+<div class="no-print">
+<div class="newsletter">
+<div class="container">
+        <div data-section-type="newsletterSubscription">
+                {{#if settings.show_newsletter_box}} {{> components/common/subscription-form}} {{/if}} {{> components/common/payment-icons}}
+              </div>
+            </div>
+</div>
+
 {{#if banners.bottom}}
 <div class="banners" data-banner-location="bottom">
     <div class="banner">
@@ -6,87 +15,235 @@
 </div>
 {{/if}}
 <footer class="footer" role="contentinfo">
+
     <div class="container">
-        {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
-            <article class="footer-info-col
-                footer-info-col--social
-                footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
-                data-section-type="footer-webPages">
-                    <h5 class="footer-info-heading">{{lang 'social.connect'}}</h5>
-                    {{> components/common/social-links}}
-            </article>
-        {{/if}}
         <section class="footer-info">
+        <div class="row">
+        <div class="column medium-3">
             <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
-                <h5 class="footer-info-heading">{{lang 'footer.navigate'}}</h5>
+            <hr>
+            {{#if theme_settings.footer-col1-title}}
+                <h5 class="footer-info-heading">{{theme_settings.footer-col1-title}}</h5>
                 <ul class="footer-info-list">
-                    {{#each pages}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
+
+                    {{#if theme_settings.footer-col1-item1}}
                     <li>
-                        <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
+                        <a href="{{theme_settings.footer-col1-link1}}">{{theme_settings.footer-col1-item1}}</a>
                     </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col1-item2}}
+                    <li>
+                        <a href="{{theme_settings.footer-col1-link2}}">{{theme_settings.footer-col1-item2}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col1-item3}}
+                    <li>
+                        <a href="{{theme_settings.footer-col1-link3}}">{{theme_settings.footer-col1-item3}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col1-item4}}
+                    <li>
+                        <a href="{{theme_settings.footer-col1-link4}}">{{theme_settings.footer-col1-item4}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col1-item5}}
+                    <li>
+                        <a href="{{theme_settings.footer-col1-link5}}">{{theme_settings.footer-col1-item5}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col1-item6}}
+                    <li>
+                        <a href="{{theme_settings.footer-col1-link6}}">{{theme_settings.footer-col1-item6}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col1-item7}}
+                    <li>
+                        <a href="{{theme_settings.footer-col1-link7}}">{{theme_settings.footer-col1-item7}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col1-item8}}
+                    <li>
+                        <a href="{{theme_settings.footer-col1-link8}}">{{theme_settings.footer-col1-item8}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col1-item9}}
+                    <li>
+                        <a href="{{theme_settings.footer-col1-link9}}">{{theme_settings.footer-col1-item9}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col1-item10}}
+                    <li>
+                        <a href="{{theme_settings.footer-col1--link10}}">{{theme_settings.footer-col1-item10}}</a>
+                    </li>
+                    {{/if}}
+                    
                 </ul>
+                {{/if}}
             </article>
-
-            <article class="footer-info-col footer-info-col--small" data-section-type="footer-categories">
-                <h5 class="footer-info-heading">{{lang 'footer.categories'}}</h5>
-                <ul class="footer-info-list">
-                    {{#each categories}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
-                </ul>
-            </article>
-
-            {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
+            </div>
+            <div class="column medium-3">
+            {{#if theme_settings.shop_by_brand_show_footer}}
             <article class="footer-info-col footer-info-col--small" data-section-type="footer-brands">
-                <h5 class="footer-info-heading">{{lang 'footer.brands'}}</h5>
+            <hr>
+                {{#if theme_settings.footer-col2-title}}
+                <h5 class="footer-info-heading">{{theme_settings.footer-col2-title}}</h5>
                 <ul class="footer-info-list">
-                    {{#each shop_by_brand}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
-                    <li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
-                </ul>
-            </article>
-            {{/and}}
 
-            {{#if settings.address}}
-            <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
-                <h5 class="footer-info-heading">{{lang 'footer.info'}}</h5>
-                <address>{{nl2br settings.address}}</address>
-                {{#if settings.phone_number}}
-                    <strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>
+                    {{#if theme_settings.footer-col2-item1}}
+                    <li>
+                        <a href="{{theme_settings.footer-col2-link1}}">{{theme_settings.footer-col2-item1}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col2-item2}}
+                    <li>
+                        <a href="{{theme_settings.footer-col2-link2}}">{{theme_settings.footer-col2-item2}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col2-item3}}
+                    <li>
+                        <a href="{{theme_settings.footer-col2-link3}}">{{theme_settings.footer-col2-item3}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col2-item4}}
+                    <li>
+                        <a href="{{theme_settings.footer-col2-link4}}">{{theme_settings.footer-col2-item4}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col2-item5}}
+                    <li>
+                        <a href="{{theme_settings.footer-col2-link5}}">{{theme_settings.footer-col2-item5}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col2-item6}}
+                    <li>
+                        <a href="{{theme_settings.footer-col2-link6}}">{{theme_settings.footer-col2-item6}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col2-item7}}
+                    <li>
+                        <a href="{{theme_settings.footer-col2-link7}}">{{theme_settings.footer-col2-item7}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col2-item8}}
+                    <li>
+                        <a href="{{theme_settings.footer-col2-link8}}">{{theme_settings.footer-col2-item8}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col2-item9}}
+                    <li>
+                        <a href="{{theme_settings.footer-col2-link9}}">{{theme_settings.footer-col2-item9}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col2-item10}}
+                    <li>
+                        <a href="{{theme_settings.footer-col2--link10}}">{{theme_settings.footer-col2-item10}}</a>
+                    </li>
+                    {{/if}}
+                    
+                </ul>
                 {{/if}}
             </article>
             {{/if}}
+            </div>
+            <div class="column medium-3">
+            <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
+            <hr>
+               {{#if theme_settings.footer-col3-title}}
+                <h5 class="footer-info-heading">{{theme_settings.footer-col3-title}}</h5>
+                <ul class="footer-info-list">
 
-            <article class="footer-info-col" data-section-type="newsletterSubscription">
-                {{#if settings.show_newsletter_box}}
-                    {{> components/common/subscription-form}}
+                    {{#if theme_settings.footer-col3-item1}}
+                    <li>
+                        <a href="{{theme_settings.footer-col3-link1}}">{{theme_settings.footer-col3-item1}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col3-item2}}
+                    <li>
+                        <a href="{{theme_settings.footer-col3-link2}}">{{theme_settings.footer-col3-item2}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col3-item3}}
+                    <li>
+                        <a href="{{theme_settings.footer-col3-link3}}">{{theme_settings.footer-col3-item3}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col3-item4}}
+                    <li>
+                        <a href="{{theme_settings.footer-col3-link4}}">{{theme_settings.footer-col3-item4}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col3-item5}}
+                    <li>
+                        <a href="{{theme_settings.footer-col3-link5}}">{{theme_settings.footer-col3-item5}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col3-item6}}
+                    <li>
+                        <a href="{{theme_settings.footer-col3-link6}}">{{theme_settings.footer-col3-item6}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col3-item7}}
+                    <li>
+                        <a href="{{theme_settings.footer-col3-link7}}">{{theme_settings.footer-col3-item7}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col3-item8}}
+                    <li>
+                        <a href="{{theme_settings.footer-col3-link8}}">{{theme_settings.footer-col3-item8}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col3-item9}}
+                    <li>
+                        <a href="{{theme_settings.footer-col3-link9}}">{{theme_settings.footer-col3-item9}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer-col3-item10}}
+                    <li>
+                        <a href="{{theme_settings.footer-col3--link10}}">{{theme_settings.footer-col3-item10}}</a>
+                    </li>
+                    {{/if}}
+                    
+                </ul>
                 {{/if}}
-                {{> components/common/payment-icons}}
             </article>
+            </div>
+            <div class="column medium-3">
+            <hr>
+        <div class="footer-logo">
+            <h1 class="footer-logo header-logo--{{theme_settings.logo-position}}">
+            {{> components/common/store-logo}}
+        </h1>
+        </div>
+        {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
+        <article class="footer-info-col
+                footer-info-col--social
+                footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}" data-section-type="footer-webPages">
+            <h5 class="footer-info-heading">{{lang 'social.connect'}}</h5> {{> components/common/social-links}}
+        </article>
+        {{/if}}
+            </div>
         </section>
-        {{#if theme_settings.geotrust_ssl_common_name}}
-            <div class="footer-geotrust-ssl-seal">
-                {{> components/common/geotrust-ssl-seal}}
-            </div>
-        {{/if}}
-        {{#if theme_settings.show_powered_by}}
-            <div class="footer-copyright">
-                <p class="powered-by">Powered by <a href="https://www.bigcommerce.com?utm_source=merchant&amp;utm_medium=poweredbyBC" rel="nofollow">BigCommerce</a></p>
-            </div>
-        {{/if}}
-        {{#if theme_settings.show_copyright_footer}}
-            <div class="footer-copyright">
-                <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
-            </div>
-        {{/if}}
     </div>
+    <div class="sub-footer">
+    <div class="container">
+    {{#if theme_settings.geotrust_ssl_common_name}}
+        <div class="footer-geotrust-ssl-seal">
+            {{> components/common/geotrust-ssl-seal}}
+        </div>
+    {{/if}} {{#if theme_settings.show_powered_by}}
+        <div class="footer-copyright">
+            <p class="powered-by">Powered by <a href="https://www.bigcommerce.com/" rel="nofollow">BigCommerce</a></p>
+        </div>
+    {{/if}} 
+        <div class="footer-copyright">
+            {{#if theme_settings.show_copyright_footer}}
+            <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
+            {{/if}}
+            <p class="powered-by throwRight">
+                {{theme_settings.product-asterisk}}
+            </p>
+        </div>
+        </div>
+        </div>
 </footer>
+</div>

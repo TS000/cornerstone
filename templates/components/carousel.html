@@ -1,6 +1,6 @@
 <section class="heroCarousel"
     data-slick='{
-        "dots": true,
+        "dots": false,
         "mobileFirst": true,
         "slidesToShow": 1,
         "slidesToScroll": 1,
@@ -14,17 +14,10 @@
             style="background-image: url({{image}})">
             <img class="heroCarousel-image" data-lazy="{{image}}" alt="{{alt_text}}" title="{{alt_text}}""
              {{#if image_width}}width="{{image_width}}"{{/if}} {{#if image_height}}height="{{image_height}}"{{/if}} />
-            {{#if heading}}
+            
                 {{> components/carousel-content show_background=true}}
-            {{else}}
-                {{#if text}}
-                    {{> components/carousel-content show_background=true}}
-                {{else}}
-                    {{#if button_text}}
-                        {{> components/carousel-content show_background=false}}
-                    {{/if}}
-                {{/if}}
-            {{/if}}
+       
+                
         </div>
     </a>
     {{/each}}

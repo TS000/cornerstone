@@ -38,11 +38,11 @@ export default class StencilDropdown {
     bind($dropDownTrigger, $container, style) {
         let modalOpened = false;
 
-        $dropDownTrigger.on('click', event => {
+        $dropDownTrigger.on('click', (event) => {
             const $cart = $('.is-open[data-cart-preview]');
 
             if ($cart) {
-                $cart.trigger('click');
+                $cart.click();
             }
 
             if ($container.hasClass('is-open')) {
@@ -52,7 +52,7 @@ export default class StencilDropdown {
             }
         });
 
-        $('body').on('click', e => {
+        $('body').click((e) => {
             // Call onClick handler
             if (this.extendables && this.extendables.onBodyClick) {
                 this.extendables.onBodyClick(e, $container);

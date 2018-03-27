@@ -40,7 +40,7 @@ export default class Auth extends PageManager {
             },
         ]);
 
-        $loginForm.on('submit', event => {
+        $loginForm.submit((event) => {
             this.loginValidator.performCheck();
 
             if (this.loginValidator.areAll('valid')) {
@@ -68,7 +68,7 @@ export default class Auth extends PageManager {
             },
         ]);
 
-        $forgotPasswordForm.on('submit', event => {
+        $forgotPasswordForm.submit((event) => {
             this.forgotPasswordValidator.performCheck();
 
             if (this.forgotPasswordValidator.areAll('valid')) {
@@ -154,7 +154,7 @@ export default class Auth extends PageManager {
             );
         }
 
-        $createAccountForm.on('submit', event => {
+        $createAccountForm.submit((event) => {
             createAccountValidator.performCheck();
 
             if (createAccountValidator.areAll('valid')) {

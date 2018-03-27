@@ -11,7 +11,6 @@
 //    margin to compensate.
 //
 // -----------------------------------------------------------------------------
-
 .header {
     background-color: $header-bg;
     border-bottom: container("border");
@@ -19,36 +18,47 @@
     top: 0;
     width: 100%;
     z-index: zIndex("low");
-
     @include breakpoint("medium") {
         border-bottom: container("border");
         overflow: visible;
         position: relative;
     }
-
     &.is-open {
         height: 100%;
-
         @include breakpoint("medium") {
             height: auto;
         }
     }
 }
 
+.navUser-item.navUser-item--social {
+    float: right;
+}
+
+.socialLinks .icon svg {
+    fill: #fff;
+    @include breakpoint("xsmall") {
+        fill: #4f4f4f;
+    }
+    @include breakpoint("medium") {
+        fill: #fff;
+    }
+}
+
 .header-logo {
-    font-size: 0;   // 1
+    font-size: 0; // 1
     margin: 0 remCalc($header-toggle-width); // 2
     text-align: center;
-
-    @include breakpoint("small") { // 4
+    @include breakpoint("small") {
+        // 4
         margin-left: remCalc($header-toggle-width * 1.5);
         margin-right: remCalc($header-toggle-width * 1.5);
     }
-
     @include breakpoint("medium") {
-        margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
+        margin: 0;
         padding: 0;
-
+        position: relative;
+        top: 40px;
         .header.fixed & {
             background-color: color("greys", "lightest");
             margin: 0;
@@ -58,7 +68,6 @@
             width: 100%;
         }
     }
-
     > a {
         @include clearfix;
         color: $storeName-color;
@@ -68,19 +77,20 @@
         text-decoration: none;
         width: 100%;
         z-index: zIndex("low");
-
         // scss-lint:disable NestingDepth
+        @include breakpoint("xsmall"){
+            text-align: center;
+        }
         @include breakpoint("medium") {
             background: none;
             border-bottom: 0;
             display: inline;
             padding: 0;
+            text-align: initial;
         }
-
         &:hover {
             color: color("link", "hover");
         }
-
         &:active {
             color: color("link", "active");
         }
@@ -89,32 +99,22 @@
 
 .header-logo--left {
     text-align: left;
-
     @include breakpoint("medium") {
         margin-left: remCalc(40px);
-    }
-
-    .header-logo-image {
-        right: unset;
     }
 }
 
 .header-logo--right {
     text-align: right;
-
     @include breakpoint("medium") {
         margin-right: remCalc(40px);
-    }
-
-    .header-logo-image {
-        left: unset;
     }
 }
 
 .header-logo-text {
     display: block;
     font-family: $fontFamily-hero;
-    font-size: $fontSize-logo-small;   // 1
+    font-size: $fontSize-logo-small; // 1
     font-weight: stencilFontWeight("logo-font");
     letter-spacing: remCalc(5px);
     margin-left: auto;
@@ -124,14 +124,12 @@
     text-overflow: ellipsis;
     text-transform: uppercase;
     white-space: nowrap;
-
     @include breakpoint("small") {
         font-size: $fontSize-logo-medium;
         letter-spacing: remCalc(9px);
         padding-bottom: 0;
         padding-top: 0;
     }
-
     @include breakpoint("medium") {
         display: inline;
         font-size: $fontSize-logo-large;
@@ -140,44 +138,50 @@
         max-width: none;
         overflow: auto;
         white-space: normal;
-
         .header.fixed & {
             font-size: fontSize("larger");
         }
     }
 }
 
-.header-logo-image-container {
-    position: relative;
-}
-
-.header-logo-image-container:after {
-    content: '';
-    display: block;
-    padding-bottom: remCalc($header-height) - $header-logo-marginVertical * 2;
-
-    @include breakpoint("medium") {
-        padding-bottom: get-height(stencilString('logo_size'));
-    }
-}
-
 .header-logo-image {
-    @include lazy-loaded-img;
     max-height: remCalc($header-height) - $header-logo-marginVertical * 2;
-
     @include breakpoint("medium") {
         max-height: none;
     }
 }
 
-
+.category-nav {
+ li {
+    list-style: none;
+    display: inline-block;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-right: 1.5rem;
+    color: #606060;
+    @include breakpoint("small") {
+    margin-bottom: 15px;
+}
+@include breakpoint("large") {
+    margin-bottom: 0;
+}
+}
+a {
+    color: stencilColor("color-secondary");
+    &:hover,
+    &:focus,
+    &:active {
+        color: stencilColor("color-primary");
+    }
+}
+}
 
 //
 // Mobile Menu Toggle
 //
 // 1. Animate lines from 'x' to hamburger
 // -----------------------------------------------------------------------------
-
 .mobileMenu-toggle {
     @include square($header-toggle-width);
     display: inline-block;
@@ -187,11 +191,9 @@
     padding: 0 remCalc(18);
     position: absolute;
     z-index: zIndex("high");
-
     @include breakpoint("medium") {
         display: none;
     }
-
     .mobileMenu-toggleIcon,
     .mobileMenu-toggleIcon::before,
     .mobileMenu-toggleIcon::after {
@@ -204,24 +206,19 @@
         transition: transform 100ms ease-in, top 100ms ease-in 150ms, bottom 100ms ease-in 150ms; // 1
         width: remCalc(20);
     }
-
     .mobileMenu-toggleIcon {
         top: remCalc(27);
         transition: background-color 10ms ease-in 100ms;
     }
-
     .mobileMenu-toggleIcon::before {
         top: -0.5rem;
     }
-
     .mobileMenu-toggleIcon::after {
         bottom: -0.5rem;
     }
-
     &.is-open .mobileMenu-toggleIcon {
         background-color: transparent;
         transition-delay: 100ms;
-
         // scss-lint:disable NestingDepth
         &::before,
         &::after {
@@ -230,16 +227,18 @@
             top: auto;
             transition: transform 100ms ease-in 150ms, top 100ms ease-in, bottom 100ms ease-in; // Animate lines from hamburger to 'x'
         }
-
         &::before {
             top: 0;
             transform: rotate(45deg);
         }
-
         &::after {
             bottom: 0;
             transform: rotate(-45deg);
         }
-
     }
+}
+
+//Custom Header
+ul {
+  font-size: 12px;
 }

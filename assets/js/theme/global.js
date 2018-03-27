@@ -17,6 +17,8 @@ import 'lazysizes';
 import loadingProgressBar from './global/loading-progress-bar';
 import FastClick from 'fastclick';
 import sweetAlert from './global/sweet-alert';
+import onDisplay from './product/on-display';
+import iFrameAdapter from './product/iframe-adapter';
 
 function fastClick(element) {
     return new FastClick(element);
@@ -43,6 +45,14 @@ export default class Global extends PageManager {
         maintenanceMode(this.context.maintenanceMode);
         loadingProgressBar();
         sweetAlert();
+        next();
+        onDisplay();
+    
+}
+
+    after(next) {
+        iFrameAdapter();
+
         next();
     }
 }

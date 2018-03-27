@@ -3,13 +3,10 @@ import _ from 'lodash';
 import mediaQueryListFactory from '../common/media-query-list';
 import { CartPreviewEvents } from './cart-preview';
 
-const PLUGIN_KEY = {
-    CAMEL: 'mobileMenuToggle',
-    SNAKE: 'mobile-menu-toggle',
-};
+const PLUGIN_KEY = 'mobile-menu-toggle';
 
 function optionsFromData($element) {
-    const mobileMenuId = $element.data(PLUGIN_KEY.CAMEL);
+    const mobileMenuId = $element.data(PLUGIN_KEY);
 
     return {
         menuSelector: mobileMenuId && `#${mobileMenuId}`,
@@ -175,9 +172,9 @@ export class MobileMenuToggle {
  * @param {Object} [options.scrollViewSelector]
  * @return {MobileMenuToggle}
  */
-export default function mobileMenuToggleFactory(selector = `[data-${PLUGIN_KEY.SNAKE}]`, overrideOptions = {}) {
+export default function mobileMenuToggleFactory(selector = `[data-${PLUGIN_KEY}]`, overrideOptions = {}) {
     const $toggle = $(selector).eq(0);
-    const instanceKey = `${PLUGIN_KEY.CAMEL}Instance`;
+    const instanceKey = `${PLUGIN_KEY}-instance`;
     const cachedMobileMenu = $toggle.data(instanceKey);
 
     if (cachedMobileMenu instanceof MobileMenuToggle) {

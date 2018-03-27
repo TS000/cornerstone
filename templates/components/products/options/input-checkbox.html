@@ -13,10 +13,7 @@
         name="attribute[{{id}}]"
         id="attribute-{{id}}"
         value="{{value}}"
-        {{#if checked}}
-            checked
-            data-default
-        {{/if}}
+        {{#if checked}}checked{{/if}}
         {{#if required}}required{{/if}}>
 
     <label class="form-label {{class}}" for="attribute-{{id}}">{{label}}</label>

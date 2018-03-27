@@ -32,6 +32,22 @@ export default class Category extends CatalogPage {
             },
             showMore: 'category/show-more',
         };
+//set number of products on category page. todo: refactor
+         $(".perpage-25").on("click", () => {
+            
+   this.facetedSearch.requestOptions.config.category.products.limit = 25;
+   this.facetedSearch.updateView();
+});
+
+         $(".perpage-50").on("click", () => {
+   this.facetedSearch.requestOptions.config.category.products.limit = 50;
+   this.facetedSearch.updateView();
+});
+
+         $(".perpage-100").on("click", () => {
+   this.facetedSearch.requestOptions.config.category.products.limit = 100;
+   this.facetedSearch.updateView();
+});
 
         this.facetedSearch = new FacetedSearch(requestOptions, (content) => {
             $productListingContainer.html(content.productListing);

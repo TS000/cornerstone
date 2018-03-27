@@ -41,12 +41,10 @@ function toggleOption(show) {
     // move the option to the correct select element if required
     if (currentSelectElement.is(':disabled') && show) {
         const previousIndex = this.data('index');
-        const $elementNowAtPreviousIndex = selectElement.find(`option:eq(${previousIndex})`);
-
-        if ($elementNowAtPreviousIndex.length) {
-            this.insertBefore($elementNowAtPreviousIndex);
+        if (previousIndex > 0) {
+            this.insertAfter(selectElement.find(`option:eq(${previousIndex - 1})`));
         } else {
-            $(this).appendTo(selectElement);
+            $(this).prependTo(selectElement);
         }
     } else if (!currentSelectElement.is(':disabled') && !show) {
         this.data('index', currentSelectElement.find('option').index(this));

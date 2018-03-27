@@ -1,17 +1,40 @@
-<h5 class="footer-info-heading">{{lang 'newsletter.subscribe'}}</h5>
-<p>{{lang 'newsletter.subscribe_intro'}}</p>
-
-<form class="form" action="{{urls.subscribe.action}}" method="post">
-    <fieldset class="form-fieldset">
-        <input type="hidden" name="action" value="subscribe">
-        <input type="hidden" name="nl_first_name" value="bc">
-        <input type="hidden" name="check" value="1">
-        <div class="form-field">
-            <label class="form-label is-srOnly" for="nl_email">{{lang 'common.email_address'}}</label>
-            <div class="form-prefixPostfix wrap">
-                <input class="form-input" id="nl_email" name="nl_email" type="email" value="{{customer.email}}" placeholder="{{lang 'newsletter.email_placeholder'}}">
-                <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="{{lang 'newsletter.subscribe_submit'}}">
+<div class="row">
+    <div class="column medium-4">
+        <h2 class="footer-info-heading">{{lang 'newsletter.subscribe'}}</h2>
+        <!-- <p>{{lang 'newsletter.subscribe_intro'}}</p> -->
+    </div>
+    <div class="column medium-8">
+    <form class="form-inline" action="{{urls.subscribe.action}}" method="post">
+    <div class="row">
+        <div class="form-group column medium-4">
+            <div class="input-group"> <span class="input-group-addon"></span>
+                <input class="form-input" id="nl_email" name="nl_email" type="text" value="" placeholder="{{lang 'newsletter.name_placeholder'}}">
             </div>
         </div>
-    </fieldset>
+        <div class="form-group column medium-4">
+            <div class="input-group"> <span class="input-group-addon"></span>
+                <input class="form-input" id="nl_email" name="nl_email" type="email" value="{{customer.email}}" placeholder="{{lang 'newsletter.email_placeholder'}}">
+            </div>
+        </div>
+        <div class="column medium-4">
+        <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="{{lang 'newsletter.subscribe_submit'}}">
+        </div>
+    </div>
 </form>
+        <!-- <form class="form" action="{{urls.subscribe.action}}" method="post">
+            <fieldset class="form-fieldset">
+                <input type="hidden" name="action" value="subscribe">
+                <input type="hidden" name="nl_first_name" value="bc">
+                <input type="hidden" name="check" value="1">
+                <div class="form-field">
+                    <div class="form-prefixPostfix wrap">
+                        <input class="form-input" id="nl_email" name="nl_email" type="text" value="" placeholder="{{lang 'newsletter.name_placeholder'}}">
+                    </div>
+                </div>
+                <label class="form-label is-srOnly" for="nl_email">get $10 off</label>
+                <input class="form-input" id="nl_email" name="nl_email" type="email" value="{{customer.email}}" placeholder="{{lang 'newsletter.email_placeholder'}}">
+                <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="{{lang 'newsletter.subscribe_submit'}}">
+            </fieldset>
+        </form> -->
+    </div>
+</div>

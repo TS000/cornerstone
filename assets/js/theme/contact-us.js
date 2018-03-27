@@ -36,7 +36,7 @@ export default class ContactUs extends PageManager {
             },
         ]);
 
-        $contactForm.on('submit', event => {
+        $contactForm.submit((event) => {
             contactUsValidator.performCheck();
 
             if (contactUsValidator.areAll('valid')) {

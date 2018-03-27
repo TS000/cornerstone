@@ -9,6 +9,7 @@ import ProductDetails from './common/product-details';
 import videoGallery from './product/video-gallery';
 import { classifyForm } from './common/form-utils';
 
+
 export default class Product extends PageManager {
     constructor(context) {
         super(context);
@@ -64,7 +65,7 @@ export default class Product extends PageManager {
 
     productReviewHandler() {
         if (this.url.indexOf('#write_review') !== -1) {
-            this.$reviewLink.trigger('click');
+            this.$reviewLink.click();
         }
     }
 }

@@ -1,0 +1,1 @@
+{"components/common/search-reveal":"<div class=\"search-reveal\">\n    <section class=\"quickSearchResults\" data-bind=\"html: results\"></section>\n</div>"}

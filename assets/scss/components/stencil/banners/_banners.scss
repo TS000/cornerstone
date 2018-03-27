@@ -22,6 +22,11 @@
 
     a {
         color: color("whites", "bright");
+        &:hover,
+        &:active,
+        &:focus {
+        color: stencilColor("color-secondary");
+        }
     }
 }
 

@@ -42,7 +42,11 @@
 
     .slick-next,
     .slick-prev {
-        top: 50%;
+        top: 20%;
+
+        @include breakpoint("medium") {
+            top: 50%;
+        }
     }
 
     .slick-next {

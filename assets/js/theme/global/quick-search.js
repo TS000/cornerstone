@@ -10,10 +10,10 @@ export default function () {
     const $searchQuery = $('#search_query');
     const stencilDropDownExtendables = {
         hide: () => {
-            $searchQuery.trigger('blur');
+            $searchQuery.blur();
         },
         show: (event) => {
-            $searchQuery.trigger('focus');
+            $searchQuery.focus();
             event.stopPropagation();
         },
     };
@@ -52,7 +52,7 @@ export default function () {
     });
 
     // Catch the submission of the quick-search
-    $quickSearchDiv.on('submit', event => {
+    $quickSearchDiv.on('submit', (event) => {
         const searchQuery = $(event.currentTarget).find('input').val();
 
         if (searchQuery.length === 0) {

@@ -34,7 +34,7 @@
         margin-top: spacing("half");
     }
 
-    @media (min-width: $screen-xxsmall) and (max-width: $screen-medium) {
+    @media (min-width: $screen-xxsmall) and (max-width: $screen-xsmall) {
         pointer-events: none;
     }
 }

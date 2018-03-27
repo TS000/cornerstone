@@ -10,12 +10,13 @@ product:
         limit: {{theme_settings.productpage_similar_by_views_count}}
 ---
 {{#partial "page"}}
+<div class="no-print">
     {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 
     {{#each product.shipping_messages}}
         {{> components/common/alert-info message}}
     {{/each}}
-
+</div>
     <div itemscope itemtype="http://schema.org/Product">
         {{> components/products/product-view schema=true}}
 
@@ -26,9 +27,9 @@ product:
         {{#if settings.show_product_reviews}}
             {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
         {{/if}}
-
+<div class="no-print">
         {{> components/products/tabs}}
-
+</div>
     </div>
 
 {{/partial}}

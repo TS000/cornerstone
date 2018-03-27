@@ -1,0 +1,46 @@
+<div class="print-worthy">
+    <div class="row">
+       
+    <figure class="productView-image"
+                data-image-gallery-main
+                data-zoom-image="{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}"
+                >
+            <a class="product-image-wrap" href="{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}">
+                 <span class="instore-banner">on display</span>
+                <img class="productView-image--default"
+                     src="{{getImage product.main_image 'product_size' (cdn theme_settings.default_image_product)}}"
+                     alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}" data-main-image>
+            </a>
+        </figure>
+        <h1 class="productView-title text-bold text-center">{{product.title}}</h1>
+</div>
+        <div class="row">
+            <div class="column small-6">
+                <div class="print-item">
+                    <p><span class="text-bold">Manufacturer:</span>
+                {{product.brand.name}}
+            </p>
+                </div>
+                <div class="print-item">
+                    <p class="">
+                <span class="text-bold">Price:</span>{{> components/products/price price=product.price schema_org=schema}}
+              
+            </p>
+                </div>
+                
+            </div>
+            <div class="column small-6">
+                <div class="print-item">
+                    <p><span class="text-bold">Bulbs: </span> {{{product.custom_fields.0.value}}}</p>
+                </div>
+                <div class="print-item">
+                    <p><span class="text-bold">Description:</span> {{{product.description}}}</p>
+                </div>
+                <div class="print-item"></div>
+            </div>
+            <div class="column small-12 print-logo"><h1 class="footer-logo header-logo--{{theme_settings.logo-position}}">
+            {{> components/common/store-logo}}
+        </h1>
+            <p class="print-address">Southern Lights - Burnsville, MN - (952) 890-8977 - www.SouthernLightsInc.com</p></div>
+        </div>
+</div>
